@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var secciones = require('./routes/secciones');
 var api = require('./routes/api');
+require("dotenv").load();
 
 var app = express();
 
@@ -25,6 +26,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', secciones);
 app.use('/api', api);
+
+var variable = "" || process.env.prueba;
+console.log(variable);
+
+app.get("/hue", function(req,res){
+  res.send(variable);
+});
 
 app.get("/demo", function(req,res){
   res.render("demo.html");
