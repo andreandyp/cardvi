@@ -5,19 +5,31 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Demo WebVR</title>
 	<script src="/js/jquery-3.2.1.min.js"></script>
-	<script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+	<script src="/js/aframe.min.js"></script>
 	<script src="/js/demovr.js"></script>
 </head>
 <body>
 	<div>
-		<input type="button" value="Cambiar" id="cambiar">
+		<input type="button" value="Guardar animación" id="cambiar">
 	</div>
 	<div>
 		<a-scene>
+			<a-plane rotation="-90 0 0" width="7" height="7"></a-plane>
+
 			<a-sky color="#000"></a-sky>
-			<a-text value="Programacion orientada a eventos" color="#FFF" position="-3.5 3 -3" scale="2.0 2.0 2.0"></a-text>
-			<a-text value="La conoces y no lo sabes..." color="#FFF" position="-1.5 2 -3" scale="1.0 1.0 1.0"></a-text>
-			<a-circle color="#F00" radius="0.5" id="circulo" position="0 1 -3"></a-circle>
+			<a-text value="Programacion orientada a eventos" color="#FFF" position="-3.5 4 -4" scale="2.0 2.0 2.0"></a-text>
+			<a-text value="La conoces y no lo sabes..." color="#FFF" position="-1.5 3 -4" scale="1.0 1.0 1.0"></a-text>
+			<a-text id="desc" value="En este momento, nadie sabe nada de los demás" color="#FFF" position="-1.5 2 -4" scale="1.0 1.0 1.0"></a-text>
+			
+			<a-sphere radius="0.5" position="0 1 -3" color="red"></a-sphere>
+			<a-cylinder position="1.75 1 -3" radius="0.1" rotation="0 0 90" height="2.5" color="gray"></a-cylinder>
+			<a-cylinder position="-1.75 1 -3" radius="0.1" rotation="0 0 90" height="2.5" color="gray"></a-cylinder>
+			<a-sphere radius="0.5" position="-3 1 0" color="red"></a-sphere>
+			<a-cylinder position="-3 1 -1.75" radius="0.1" rotation="90 0 0" height="2.5" color="gray"></a-cylinder>
+			<a-sphere radius="0.5" position="3 1 0" color="red"></a-sphere>
+			<a-cylinder position="3 1 -1.75" radius="0.1" rotation="90 0 0" height="2.5" color="gray"></a-cylinder>
+			
+			<a-camera limite></a-camera>
 		</a-scene>
 	</div>
 	
