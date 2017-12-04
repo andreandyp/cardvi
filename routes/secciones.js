@@ -17,16 +17,16 @@ router.get("/crear", function(req, res){
 });
 
 router.get("/iniciar", function(req, res){
-	res.render("crear.html");
+	res.render("Iniciar sesión");
 });
 
 router.get("/registrar", function(req, res){
-	res.render("crear.html");
+	res.render("Registar nuevo usuario");
 });
 
 //Visualizar desde el Cardboard
 router.get("/ver/:id", function(req, res){
-	res.send(req.params.id);
+	res.render("ver.html");
 });
 
 //Transmitir hacia el Cardboard
@@ -36,7 +36,11 @@ router.get("/transmitir/:id", function(req, res){
 
 //Modificar una animación
 router.get("/modificar/:id", function(req, res){
-	res.send(req.params.id);
+	if(!req.isAuthenticated()){
+		res.redirect("/");
+	}else{
+		res.send("yay");
+	}
 });
 
 module.exports = router;
