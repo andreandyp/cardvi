@@ -12,16 +12,17 @@
         <link href="http://fonts.googleapis.com/css?family=Megrim" rel="stylesheet" type="text/css"/>
         <link href="https://fontlibrary.org/face/aileron" rel="stylesheet" media="screen" type="text/css"/>
          <!--Import jQuery before materialize.js-->
-        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>        
+        <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="/js/materialize.min.js"></script>
+        <script src="/js/autentificacion.js"></script>
     </head>
     <body>
         <nav class="menu">
             <a id="name" href="#">Soporte</a>
             <form class="form">
-                <input type="text" placeholder="Correo">
-                <input type="password" placeholder="Contraseña">
-                <input type="button" value="Entrar">
+                <input type="text" placeholder="Usuario" id="usuario">
+                <input type="password" placeholder="Contraseña" id="contraseña">
+                <input type="button" value="Entrar" id="entrar">
             </form>            
         </nav>
 
@@ -42,9 +43,9 @@
                  visualizarlos en tu CardBoard!
             </p>
             <form class="form">
-                <input type="text" placeholder="Correo">
-                <input type="password" placeholder="Contraseña">
-                <input type="button" value="Registrar">
+                <input type="text" placeholder="Usuario" id="nusuario">
+                <input type="password" placeholder="Contraseña" id="ncontraseña">
+                <input type="button" value="Registrar" id="registrar">
             </form>
             <p>Al registrarte, aceptas nuestros Términos & Condiciones.</p>
 

@@ -3,25 +3,22 @@ var router = express.Router();
 
 //Página principal
 router.get('/', function(req, res, next) {
-	res.render('index.html');
+	if(req.isAuthenticated()){
+		res.redirect("/crear");
+	}
+	else{
+		res.render("index.html");
+	}
 });
 
-//Página principal (sesión iniciada)
-router.get('/inicio', function(req, res, next) {
-	res.render('index.html');
-});
-
-//Crear nueva animación
 router.get("/crear", function(req, res){
-	res.render("crear.html");
-});
-
-router.get("/iniciar", function(req, res){
-	res.render("Iniciar sesión");
-});
-
-router.get("/registrar", function(req, res){
-	res.render("Registar nuevo usuario");
+	if(req.isAuthenticated()){
+		res.render("crear.html");
+	}
+	else{
+		res.redirect("/");
+	}
+	
 });
 
 //Visualizar desde el Cardboard
@@ -31,11 +28,11 @@ router.get("/ver/:id", function(req, res){
 
 //Modificar una animación
 router.get("/modificar/:id", function(req, res){
-	/*if(!req.isAuthenticated()){
-		res.redirect("/");
-	}else{*/
+	if(req.isAuthenticated()){
 		res.render("modificar.html");
-	//}
+	}else{
+		res.redirect("/");
+	}
 });
 
 module.exports = router;
