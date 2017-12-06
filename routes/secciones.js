@@ -29,18 +29,13 @@ router.get("/ver/:id", function(req, res){
 	res.render("ver.html");
 });
 
-//Transmitir hacia el Cardboard
-router.get("/transmitir/:id", function(req, res){
-	res.send(req.params.id);
-});
-
 //Modificar una animación
 router.get("/modificar/:id", function(req, res){
-	if(!req.isAuthenticated()){
+	/*if(!req.isAuthenticated()){
 		res.redirect("/");
-	}else{
-		res.send("yay");
-	}
+	}else{*/
+		res.render("modificar.html");
+	//}
 });
 
 module.exports = router;

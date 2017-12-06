@@ -19,7 +19,7 @@ $(document).ready(function(){
 
     var animacion = {};
 
-    $.ajax({url: "/api/animaciones/"+id,
+    $.ajax({url: "/api/ver/"+id,
 
     success: function(respuesta){
         animacion = respuesta.animacion
@@ -32,7 +32,6 @@ $(document).ready(function(){
 });
 
 function mostrarAnim(anim){
-    console.log(anim);
     var elementos = anim.elementos;
     for(let i = 0; i < elementos.length; i++){
         let elemActual = document.createElement(elementos[i]["etiqueta"]);

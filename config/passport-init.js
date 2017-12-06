@@ -26,7 +26,8 @@ module.exports = function(passport){
             }else{
                 var nuevo = {
                     usuario: usuario,
-                    contraseña: crearHash(contraseña)
+                    contraseña: crearHash(contraseña),
+                    animaciones: []
                 }
                 db.get().collection("usuarios").insertOne(nuevo, (err, doc) => {
                     if(err){
