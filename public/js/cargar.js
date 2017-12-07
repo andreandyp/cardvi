@@ -26,8 +26,8 @@ $(document).ready(function(){
         mostrarAnim(animacion);
     },
     
-    error: function(){
-        alert("Animación no encontrada");
+    error: function(xhr){
+        alert(xhr.responseJSON.error);
     }});
 });
 

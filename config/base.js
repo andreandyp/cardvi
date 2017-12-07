@@ -1,6 +1,6 @@
 var MongoClient = require("mongodb").MongoClient;
 require("dotenv").load();
-const url = "" || process.env.DB_URL;
+const url = "mongodb://localhost:27017/cardvi" || process.env.DB_URL;
 var base;
 
 module.exports = {

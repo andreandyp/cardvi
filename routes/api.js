@@ -8,15 +8,13 @@ router.get("/plantillas", function(req, res){
 });
 
 router.get("/modificar/:id", function(req, res){
-	console.log("A la api")
 	db.get().collection("usuarios").findOne(
-		{animaciones: {$elemMatch: {id: new ObjectId(req.params.id)} }},
+		{animaciones: {$elemMatch: {id: new ObjectId(req.params.id)}}, usuario: req.user.usuario },
 		(err, doc) => {
 			if(err){
 				return res.status(500).json({ mensaje: "Error en la db: " + err });
 			}
 			if(!doc){
-				console.log("No hay doc");
 				return res.status(500).json({error: "Animacion no encontrada o modificación no permitida"});
 			}
 

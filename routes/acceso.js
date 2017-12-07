@@ -25,10 +25,8 @@ module.exports = function(passport){
     router.post("/registrar",(req,res,next) => {
         passport.authenticate("registrar",(err,usuario) => {
             if(!usuario){
-                console.log("No hay usuario");
                 res.json({error: err});
             }else{
-                console.log("Si hay usuario");
                 req.logIn(usuario, function() {
                     res.json(usuario);
                 });
