@@ -13,7 +13,7 @@
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.19.0",
-    "cookie-parser": "^1.4.4",
+    "cookie-parser": "^1.4.5",
     "debug": "^4.1.1",
     "dotenv": "^8.0.0",
     "ejs": "^2.6.1",
@@ -30,6 +30,6 @@
     "url": "https://github.com/andreandyp/cardvi.git"
   },
   "devDependencies": {
-    "npm-check": "^5.9.0"
+    "npm-check": "^5.9.2"
   }
 }
